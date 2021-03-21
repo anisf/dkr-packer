@@ -52,7 +52,7 @@ jobs:
           run: |
             id
             cd /workspace
-            packer --version
+            packer version
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master

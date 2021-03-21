@@ -16,7 +16,10 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 COPY --from=builder /usr/local/bin/packer /usr/local/bin
 
-RUN useradd --system packer
+RUN apt update \
+    && apt install -y ca-certificates \
+    && rm -rf /var/lib/apt/lists/* /var/cache/* \
+    && useradd --system packer
 
 USER packer
 WORKDIR /home/packer
