@@ -14,7 +14,7 @@ jobs:
         - devel
         - latest
         packer_version:
-        - 1.7.0
+        - 1.7.8
         - 1.6.6
 
     steps:
